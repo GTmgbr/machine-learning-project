@@ -8,15 +8,15 @@
 
 ## Status das Etapas
 
-| Etapa | Descrição | Status |
-|-------|-----------|--------|
-| 1 | Estrutura inicial, config, data_loader, README, .gitignore | ✅ Concluída |
-| 2 | EDA: figuras, estatísticas, dicionário de dados preenchido | ⏳ Aguardando |
-| 3 | Pré-processamento: limpeza estrutural + ColumnTransformer | ⏳ Aguardando |
-| 4 | Modelagem: CV, treino, tuning (Grid/Randomized) | ⏳ Aguardando |
-| 5 | Comparação final, main.py, figures 7–10, best_model.joblib | ⏳ Aguardando |
-| 6 | Docs: artigo_estrutura.md, slides_roteiro.md, referencias.md | ⏳ Aguardando |
-| 7 | README final completo | ⏳ Aguardando |
+| Etapa | Descrição | Status | Commit |
+|-------|-----------|--------|--------|
+| 1 | Estrutura inicial, config, data_loader, README, .gitignore | ✅ Concluída | ea7b42f |
+| 2 | EDA: eda.py, visualization.py, 01_eda.ipynb, figuras 1–6 | ✅ Concluída | 32bb1fc |
+| 3 | Pré-processamento: preprocessing.py (limpeza + ColumnTransformer) | ✅ Concluída | 1a4d489 |
+| 4 | Modelagem: modeling.py, evaluation.py, 02_modeling.ipynb | ✅ Concluída | 315ee08 |
+| 5 | Comparação final, main.py, 03_results_interpretation.ipynb | ✅ Concluída | a23dcd8 |
+| 6 | Docs: artigo_estrutura.md, slides_roteiro.md, referencias.md | ✅ Concluída | b54a8a8 |
+| 7 | README final + checklist atualizado | ✅ Concluída | — |
 
 ---
 
