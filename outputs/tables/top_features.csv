@@ -1,0 +1,16 @@
+ranking,feature,importancia,interpretacao_meteorologica
+1,Humidity3pm,0.1478,Umidade relativa as 15h; forte preditor direto de chuva.
+2,Pressure3pm,0.0628,Pressao atm. as 15h; queda indica frentes chuvosas.
+3,Humidity9am,0.0611,Umidade as 9h; indica condicoes gerais do dia.
+4,WindGustSpeed,0.0538,Rajada maxima; associada a sistemas de baixa pressao.
+5,Pressure9am,0.0537,Pressao atm. as 9h; tendencia de queda sinaliza chuva.
+6,Rainfall,0.0528,Precipitacao do dia atual; correlacionada com chuva futura.
+7,Temp3pm,0.0523,Temperatura as 15h; temperaturas mais frias favorecem precipitacao.
+8,MinTemp,0.0466,Temperatura minima; noites frias comuns em dias chuvosos.
+9,MaxTemp,0.0456,Temperatura maxima; valores mais baixos associados a chuva.
+10,Temp9am,0.0419,Temperatura as 9h; contexto termico matinal.
+11,Cloud9am,0.0369,Nebulosidade as 9h; nebulosidade alta precede chuva.
+12,WindSpeed3pm,0.0317,Velocidade do vento as 15h; ventos fortes associados a frentes.
+13,WindSpeed9am,0.029,Velocidade do vento as 9h.
+14,RainToday,0.0269,Choveu hoje (Yes/No); preditor direto da variavel-alvo.
+15,Month,0.0218,Mes do ano; sazonalidade da precipitacao.

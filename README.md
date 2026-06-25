@@ -46,7 +46,7 @@ machine-learning-project/
 │   ├── tables/           # Tabelas CSV de resultados (versionadas)
 │   └── reports/          # Relatórios intermediários
 ├── models/               # best_model.joblib (não versionado — regenerável)
-├── docs/                 # Estrutura do artigo, roteiro de slides, referências
+├── docs/                 # Relatório final, estrutura do artigo, referências
 ├── requirements.txt
 ├── README.md
 ├── .gitignore
@@ -157,17 +157,33 @@ Ou rode `python main.py` — o processamento ocorre na sequência do pipeline.
 
 ## Como executar o pipeline completo
 
+**Windows (PowerShell) — recomendado:**
+```powershell
+$env:PYTHONUTF8="1"; python main.py
+```
+
+**Windows (CMD):**
+```cmd
+set PYTHONUTF8=1 && python main.py
+```
+
+**Linux / macOS:**
 ```bash
 python main.py
 ```
 
+> **Nota Windows/Unicode:** a variável `PYTHONUTF8=1` é necessária em consoles Windows com
+> codificação cp1252 (padrão em instalações em português). Sem ela, os caracteres de
+> box-drawing usados nos logs (`─`, `═`, `●`) causam `UnicodeEncodeError`. Nenhum arquivo
+> do projeto precisa ser alterado — apenas defina a variável antes de executar.
+
 O script executa em sequência:
 1. Carregamento e inspeção do dataset.
-2. Análise exploratória (EDA) — gera figuras em `outputs/figures/`.
+2. Análise exploratória (EDA) — gera 7 figuras em `outputs/figures/`.
 3. Limpeza estrutural — gera `data/processed/weatherAUS_processed.csv`.
-4. Treinamento, validação cruzada e tuning dos modelos.
-5. Avaliação final no conjunto de teste.
-6. Exportação de métricas, gráficos e do melhor modelo.
+4. Treinamento, validação cruzada e tuning dos modelos (5 algoritmos).
+5. Avaliação final no conjunto de teste — gera 5 figuras em `outputs/figures/`.
+6. Exportação de métricas (4 tabelas CSV em `outputs/tables/`), top features e melhor modelo.
 
 ---
 
@@ -189,3 +205,30 @@ O script executa em sequência:
 - Split treino/teste antes de qualquer ajuste de transformador.
 - Imputação, encoding e scaling somente dentro de `Pipeline`/`ColumnTransformer`.
 - O conjunto de teste é usado **apenas** na avaliação final.
+
+---
+
+## Resultados obtidos
+
+Execução real com o dataset completo (142.193 registros, 5 modelos):
+
+| Modelo | F1 | ROC-AUC | Recall | Precision | Accuracy |
+|---|---|---|---|---|---|
+| **RandomForest** | **0,6589** | **0,8868** | 0,6536 | 0,6643 | 0,8483 |
+| LogReg | 0,6230 | 0,8667 | **0,7724** | 0,5221 | 0,7905 |
+| DecTree | 0,5965 | 0,8472 | 0,7587 | 0,4914 | 0,7699 |
+| SVM | 0,5853 | 0,8647 | 0,4904 | **0,7258** | 0,8442 |
+| Baseline | 0,0000 | 0,5000 | 0,0000 | 0,0000 | 0,7758 |
+
+**Melhor modelo: RandomForest** — F1 = 0,6589, ROC-AUC = 0,8868.  
+Variáveis mais importantes: `Humidity3pm` (0,1478), `Pressure3pm` (0,0628).
+
+---
+
+## Documentação
+
+- **Relatório final completo:** [`docs/RELATORIO_FINAL.md`](docs/RELATORIO_FINAL.md)
+- **Estrutura do artigo científico:** [`docs/artigo_estrutura.md`](docs/artigo_estrutura.md)
+- **Referências bibliográficas:** [`docs/referencias.md`](docs/referencias.md)
+- **Figuras geradas:** `outputs/figures/` (12 arquivos PNG)
+- **Tabelas geradas:** `outputs/tables/` (5 arquivos CSV)
