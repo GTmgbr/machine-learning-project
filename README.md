@@ -1,8 +1,5 @@
 # Predição de Chuva no Dia Seguinte — Rain in Australia
 
-Projeto final da disciplina isolada de Mestrado: **PCO213 — Aprendizado de Máquina e Mineração de Dados**  
-**UNIFEI** — Universidade Federal de Itajubá
-
 ## Objetivo
 
 Desenvolver um pipeline completo e reproduzível de ciência de dados para **classificação
