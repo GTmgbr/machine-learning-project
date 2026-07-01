@@ -21,27 +21,28 @@ a partir de variáveis meteorológicas observadas no dia atual.
 ```
 machine-learning-project/
 ├── data/
-│   ├── raw/              # weatherAUS.csv (não versionado — ver abaixo)
-│   └── processed/        # CSV com limpeza estrutural (não versionado — regenerável)
-├── notebooks/            # 01_eda, 02_modeling, 03_results_interpretation
-├── src/                  # Módulos Python do pipeline
-│   ├── config.py         # Configurações globais e paths
-│   ├── data_loader.py    # Carregamento, inspeção e dicionário de dados
-│   ├── eda.py            # Análise exploratória e geração de figuras
-│   ├── preprocessing.py  # Limpeza estrutural e ColumnTransformer
-│   ├── modeling.py       # Definição e treinamento dos modelos
-│   ├── evaluation.py     # Métricas, gráficos de avaliação e comparação
-│   └── visualization.py  # Helpers de plotagem e salvamento de figuras
+│   ├── raw/              #weatherAUS.csv (não versionado — ver abaixo)
+│   └── processed/        #CSV com limpeza estrutural (não versionado — regenerável)
+├── notebooks/            #01_eda, 02_modeling, 03_results_interpretation
+├── src/                  #Módulos Python do pipeline
+│   ├── config.py         #Configurações globais e paths
+│   ├── data_loader.py    #Carregamento, inspeção e dicionário de dados
+│   ├── eda.py            #Análise exploratória e geração de figuras
+│   ├── preprocessing.py  #Limpeza estrutural e ColumnTransformer
+│   ├── modeling.py       #Definição e treinamento dos modelos
+│   ├── evaluation.py     #Métricas, gráficos de avaliação e comparação
+│   └── visualization.py  #Helpers de plotagem e salvamento de figuras
 ├── outputs/
-│   ├── figures/          # Figuras geradas (versionadas)
-│   ├── tables/           # Tabelas CSV de resultados (versionadas)
-│   └── reports/          # Relatórios intermediários
-├── models/               # best_model.joblib (não versionado — regenerável)
-├── docs/                 # Relatório final, estrutura do artigo, referências
+│   ├── figures/          #Figuras geradas (versionadas)
+│   ├── tables/           #Tabelas CSV de resultados (versionadas)
+│   └── reports/          #Relatórios intermediários
+├── models/               #best_model.joblib (não versionado — regenerável)
+├── docs/                 #Estrutura do artigo, referências
 ├── requirements.txt
 ├── README.md
+├── Relatório_PCO213.pdf  #Relatório final em formato de artigo científico
 ├── .gitignore
-└── main.py               # Orquestra o pipeline ponta a ponta
+└── main.py               #Orquestra o pipeline ponta a ponta
 ```
 
 ## Modelos implementados
